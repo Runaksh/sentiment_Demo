@@ -44,25 +44,7 @@ permissions:
   contents: read
 
 jobs:
-  train:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-    - name: Training step
-      run echo "Training finished"
-      
-  test:
-    needs: train
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-    - name: Testing step
-      run echo "Testing finished"
-      
-  deploy:
-    needs: [train, test]
+   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     environment: production
